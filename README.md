@@ -11,7 +11,7 @@ Deep learning has revolutionized autonomous driving; nevertheless, its inherent 
 
 # Dataset
 ## BDD-OIA
-BDD-OIA, a subset of [BDD100K: A Diverse Driving Dataset for Heterogeneous Multitask Learning], contains 22,924 video frames, each annotated with 4 action decisions and 21 human-defined explanations. Head to [Explainable Object-induced Action Decision for Autonomous Vehicles] to download the dataset. Following [Explainable Object-induced Action Decision for Autonomous Vehicles], only the final frame of each video clip is used, leading to a training set of 16,082 images, a validation set of 2,270 images, and a test set of 4,572 images.
+BDD-OIA, a subset of [BDD100K: A Diverse Driving Dataset for Heterogeneous Multi-task Learning], contains 22,924 video frames, each annotated with 4 action decisions and 21 human-defined explanations. Head to [Explainable Object-induced Action Decision for Autonomous Vehicles] to download the dataset. Following [Explainable Object-induced Action Decision for Autonomous Vehicles], only the final frame of each video clip is used, leading to a training set of 16,082 images, a validation set of 2,270 images, and a test set of 4,572 images.
 ## PSI
 PSI includes 11,902 keyframes, each annotated with 3 actions and explanations provided in natural language. Head to [PSI: A Pedestrian Behavior Dataset for Socially Intelligent Autonomous Car] to download the dataset. Following [Attention-Based Interrelation Modeling for Explainable Automated Driving], all samples are split into training, validation, and test sets with a ratio of 7/1/2.
 
@@ -73,7 +73,7 @@ attention dimension|768|attention layers|3
 dropout|0.1|return_intermediate_dec|False
 
 # Results
-| | BDD-OIA [xu2020explainable] | | | | PSI [chen2021psi] | | | |
+| | BDD-OIA | | | | PSI | | | |
 |----------------|---------|---------|----------|----------|-----------|-----------|----------|----------|
 | | Act_mF1 | Act_oF1 | Exp_mF1 | Exp_oF1 | Act_mAcc | Act_oAcc | Exp_mF1 | Exp_oF1 |
 | GPT-4V | 0.436 | 0.537 | 0.191 | 0.284 | 0.577 | 0.618 | 0.127 | 0.143 |
