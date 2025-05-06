@@ -21,6 +21,16 @@ def main(args):
     with open(f"{config_file}", 'r') as f:
         config = yaml.safe_load(f)
     
+    args.adjust_channel = config['channel_adjust']['adjust_channel']
+    args.d_model = config["transformer"]["d_model"]
+    args.dropout = config["transformer"]["dropout"]
+    args.nhead = config["transformer"]["nhead"]
+    args.dim_feedforward = config["transformer"]["dim_feedforward"]
+    args.num_encoder_layers = config["transformer"]["num_encoder_layers"]
+    args.num_decoder_layers = config["transformer"]["num_decoder_layers"]
+    args.return_intermediate_dec = config["transformer"]["return_intermediate_dec"]
+    assert args.adjust_channel == args.d_model
+
     # device
     device = torch.device(config["device"] if torch.cuda.is_available() else "cpu")
 
@@ -45,7 +55,7 @@ def main(args):
                                 drop_last=False,
                                 num_workers=4)
     # get model
-    model = get_model(config, pretrained=False)
+    model = get_model(config, args, pretrained=False)
     model.to(device)
 
     start_time = time.time()
